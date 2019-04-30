@@ -1,5 +1,5 @@
 # Nimiq GPU (OpenCL & CUDA) Mining Client for AMD and Nvidia Cards
-[![Github All Releases](https://img.shields.io/github/downloads/Sushipool/sushi-miner-opencl/total.svg)]()
+[![Github All Releases](https://img.shields.io/github/downloads/Sushipool/sushi-nimiq-miner/total.svg)]()
 
 High-performance Nimiq GPU mining client that provides a fully open source codebase, optimized hash rate, nano protocol, multi GPU support, and a **0%** Dev fee.
 ## Quickstart (Ubuntu/Debian)
