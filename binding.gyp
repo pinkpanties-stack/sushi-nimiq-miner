@@ -4,8 +4,8 @@
     {
       'target_name': 'nimiq_miner_opencl',
       'sources': [
-        'src/native/OpenCL/miner.c',
-        'src/native/OpenCL/nimiq_miner.cc'
+        'src/native/opencl/miner.c',
+        'src/native/opencl/nimiq_miner.cc'
       ],
       'include_dirs': [
         '<!(node -e "require(\'nan\')")',
@@ -53,10 +53,10 @@
     {
         'target_name': 'nimiq_miner_cuda',
         'sources': [
-          'src/native/CUDA/argon2d.cu',
-          'src/native/CUDA/blake2b.cu',
-          'src/native/CUDA/kernels.cu',
-          'src/native/CUDA/miner.cc'
+          'src/native/cuda/argon2d.cu',
+          'src/native/cuda/blake2b.cu',
+          'src/native/cuda/kernels.cu',
+          'src/native/cuda/miner.cc'
         ],
         'rules': [{
           'extension': 'cu',
