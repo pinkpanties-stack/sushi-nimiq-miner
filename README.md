@@ -1,3 +1,5 @@
+# This repository is in development.
+
 # Nimiq GPU (OpenCL & CUDA) Mining Client for AMD and Nvidia Cards
 [![Github All Releases](https://img.shields.io/github/downloads/Sushipool/sushi-nimiq-miner/total.svg)]()
 
