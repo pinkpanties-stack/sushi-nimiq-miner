@@ -12,7 +12,107 @@ High-performance Nimiq GPU mining client that provides a fully open source codeb
 4. Install OpenCL-capable drivers for your GPU ([Nvidia](https://www.nvidia.com/Download/index.aspx) or [AMD](https://www.amd.com/en/support))
 5. Clone this repository: `git clone https://github.com/Sushipool/sushi-miner-opencl`.
 6. Build the project: `cd sushi-miner-opencl && npm install`.
-7. Copy miner.sample.conf to miner.conf: `cp miner.sample.conf miner.conf`.
+7. Copy miner.sample.conf to Parameter       Description                                            Data Type
+
+address         Nimiq wallet address                                    [string]
+                Example: "address": "Parameter       Description                                            Data Type
+
+address         Nimiq wallet address                                    [string]
+                Example: "address": "NQ...",
+
+host            Pool server address
+                Example: "host": "eu.sushipool.com"                     [string]
+                
+port            Pool server port
+                Example: "port": "443"
+                Default: 443                                            [number]
+
+consensus       Consensus method used
+                Possible values are "dumb" or "nano"
+                Note that "dumb" mode (i.e. no consensus) only works with SushiPool.
+                Example: "consensus": "nano"                            [string]
+
+api             API used to control the GPU
+                Possible values are "OpenCL" or "CUDA".
+                NVIDIA users should use CUDA for better performance.
+                Example: "api": "OpenCL"                                [string]
+                
+name            Device name to show in the dashboard                    [string]
+                Example: "name": "My Miner"
+                
+hashrate        Expected hashrate in kH/s                               [number]
+                Example: "hashrate": 100
+                
+devices         GPU devices to use
+                Example: "devices": [0,1,2]
+                Default: All available GPUs                              [array]
+                
+memory          Allocated memory in Mb for each device
+                Example: "memory": [3072,3840,3840,3840]                 [array]
+                
+threads         Number of threads per GPU
+                Example: "threads": [1,1,2,2]
+                Default: 1 for OpenCL, 2 for CUDA                        [array]
+
+cache           CUDA-only option
+                Number of Argon2 blocks cached into the local GPU memory
+                Example: "cache": [2,2,4,4]
+                Notes: Nvidia 2080 TI = 2, Nvidia 1080 TI = 4, Nvidia 1060 = 2
+                Disable: [0]
+                Default: 4                                               [array]
+                
+memoryTradeoff  CUDA-only option
+                Performs extra computations to reduce memory access
+                Example: "memoryTradeoff": [192,192,192,192]
+                Disable: [512] 
+                Default: 192                                             [array]",
+
+host            Pool server address
+                Example: "host": "eu.sushipool.com"                     [string]
+                
+port            Pool server port
+                Example: "port": "443"
+                Default: 443                                            [number]
+
+consensus       Consensus method used
+                Possible values are "dumb" or "nano"
+                Note that "dumb" mode (i.e. no consensus) only works with SushiPool.
+                Example: "consensus": "nano"                            [string]
+
+api             API used to control the GPU
+                Possible values are "OpenCL" or "CUDA".
+                NVIDIA users should use CUDA for better performance.
+                Example: "api": "OpenCL"                                [string]
+                
+name            Device name to show in the dashboard                    [string]
+                Example: "name": "My Miner"
+                
+hashrate        Expected hashrate in kH/s                               [number]
+                Example: "hashrate": 100
+                
+devices         GPU devices to use
+                Example: "devices": [0,1,2]
+                Default: All available GPUs                              [array]
+                
+memory          Allocated memory in Mb for each device
+                Example: "memory": [3072,3840,3840,3840]                 [array]
+                
+threads         Number of threads per GPU
+                Example: "threads": [1,1,2,2]
+                Default: 1 for OpenCL, 2 for CUDA                        [array]
+
+cache           CUDA-only option
+                Number of Argon2 blocks cached into the local GPU memory
+                Example: "cache": [2,2,4,4]
+                Notes: Nvidia 2080 TI = 2, Nvidia 1080 TI = 4, Nvidia 1060 = 2
+                Disable: [0]
+                Default: 4                                               [array]
+                
+memoryTradeoff  CUDA-only option
+                Performs extra computations to reduce memory access
+                Example: "memoryTradeoff": [192,192,192,192]
+                Disable: [512] 
+                Default: 192                                             [array]: `cp miner.sample.conf miner.conf`.
 8. Edit miner.conf, specify your wallet address.
 9. Run the miner `UV_THREADPOOL_SIZE=12 nodejs index.js`. Ensure UV_THREADPOOL_SIZE is higher than a number of GPU in your system.
 
